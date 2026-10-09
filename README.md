@@ -1,128 +1,337 @@
-TriPlan — Plan Smart. Travel Better.
+# TriPlan — Plan Smart. Travel Better.
 
-A front-end trip planning web application for organising journeys, activities, and budgets in one place.
+**A smart trip-planning web application to organise trips, manage activities, track expenses, and monitor travel budgets in one place.**
 
-Overview
+TriPlan is a responsive, front-end web application designed to make trip planning simple, structured, and manageable. From creating a trip to organising daily activities and tracking actual expenses, TriPlan brings the essential parts of travel planning together in one workspace.
 
-TriPlan helps you plan a trip from start to finish. Create an account, set up a trip, plan activities day by day, and track your budget and expenses. The Insights tab shows simple figures about your spending and planning progress.
+Built with **HTML5, CSS3, and vanilla JavaScript**, TriPlan runs directly in the browser without frameworks, backend services, or a build process.
 
-TriPlan is built with HTML, CSS, and vanilla JavaScript. It has no backend, no frameworks, and no build step. All data is stored in your browser’s localStorage.
+---
 
-Features
-Accounts and Authentication
-Built-in test account for quick access.
-Sign-up with name, email, Indian mobile number, and password.
-Strict password rules: at least 8 characters, 1 uppercase letter, and 1 number.
-Protected pages (My Trips, Create Trip, Trip Workspace, Profile) redirect to the login page. After you log in, you return to the page you asked for.
-Header avatar button shows your first initial and opens your profile.
-Profile page shows your name, email, mobile number, trip counts, and a logout button.
-Trip Creation
-Enter the trip name, destination, start and end dates, traveler name and mobile number, and estimated budget.
-Validation:
-The end date cannot be before the start date.
-The budget must be greater than ₹0.
-The mobile number must be a realistic Indian number. Patterns such as 9111111111 and 9876543210 are rejected.
-My Trips
-Trips are split into Active and Completed sections.
-Each trip card shows a status badge.
-Each card has actions to open or delete the trip.
-Trip Workspace
+## Overview
 
-The workspace has five tabs:
+Planning a trip often involves juggling multiple activities, schedules, and expenses. TriPlan provides a central workspace where travellers can organise their journeys, keep track of spending, and monitor their planning progress.
 
-Tab	What it shows or does
-Overview	Activity count, completion percentage, total spent, and remaining budget.
-Trip Plan	A day-by-day schedule of all trip dates with planned activities.
-Activities	Add, edit, delete, and mark activities complete. Fields: date, time, location, category, estimated cost, actual cost, and notes.
-Budget	Estimated budget, total spent, remaining amount, and a health indicator (Healthy, Watch Spending, Over Budget). Add, edit, and delete expenses.
-Insights	Average daily spending, top spending category, planning coverage, and activity progress.
-Business Rules
-Activity and expense dates must fall within the trip dates.
-Spending uses the actual cost when one is entered. Otherwise it uses the estimated cost.
-Completed trips become read-only.
-Data is isolated per user. Each account sees only its own trips.
-Tech Stack
-HTML5 for page structure
-CSS3 with custom properties, Flexbox, Grid, and media queries
-Vanilla JavaScript with no frameworks or libraries
-localStorage for accounts, sessions, and trip data
-Unsplash images for destination cards
+Users can create an account, manage multiple trips, organise activities by date, record expenses, and review useful insights through a clean, responsive interface.
 
-Project Structure:
+### Key Highlights
 
+* Account creation and login with protected pages
+* Trip creation with destination, dates, traveller details, and budget
+* Separate Active and Completed trip sections
+* Day-by-day trip planning
+* Activity management with estimated and actual costs
+* Expense tracking and budget monitoring
+* Insights into spending and planning progress
+* User-specific trip data stored in browser `localStorage`
+* Responsive layouts for desktop, tablet, and mobile
+
+---
+
+## Features
+
+### 1. Account Management and Authentication
+
+* Built-in test account for quick access.
+* Sign up using a name, email address, Indian mobile number, and password.
+* Password validation requiring at least eight characters, one uppercase letter, and one number.
+* Protected application pages with login redirection.
+* Return to the originally requested page after successful login.
+* Header avatar displaying the user's first initial.
+* Profile page displaying account information and trip statistics.
+* Logout functionality.
+
+### 2. Create and Manage Trips
+
+Create a trip by entering:
+
+* Trip name
+* Destination
+* Start and end dates
+* Traveller name and mobile number
+* Estimated trip budget
+
+**Validation rules include:**
+
+* The end date cannot be earlier than the start date.
+* The estimated budget must be greater than ₹0.
+* Indian mobile numbers are validated, with certain invalid or placeholder patterns rejected.
+
+### 3. My Trips
+
+Keep all journeys organised in one place.
+
+* View trips in separate **Active** and **Completed** sections.
+* Identify trip status through visual badges.
+* Open a trip to access its workspace.
+* Delete trips when they are no longer needed.
+* Keep each user's trip data separate from other accounts.
+
+### 4. Trip Workspace
+
+Each trip has a dedicated workspace with five tabs.
+
+| Tab            | Features                                                                                  |
+| -------------- | ----------------------------------------------------------------------------------------- |
+| **Overview**   | Activity count, completion percentage, total spending, and remaining budget               |
+| **Trip Plan**  | Day-by-day schedule covering the trip dates and planned activities                        |
+| **Activities** | Add, edit, delete, and complete activities                                                |
+| **Budget**     | Estimated budget, total spending, remaining amount, budget status, and expense management |
+| **Insights**   | Average daily spending, top spending category, planning coverage, and activity progress   |
+
+### 5. Activity Management
+
+Organise activities throughout your journey with the following details:
+
+* Activity date and time
+* Location
+* Category
+* Estimated cost
+* Actual cost
+* Notes
+* Completion status
+
+Activities can be added, edited, deleted, and marked as complete. Activity dates must fall within the trip's start and end dates.
+
+### 6. Budget and Expense Tracking
+
+Monitor travel expenses and compare spending against the planned budget.
+
+* View the estimated trip budget.
+* Track total spending and the remaining budget.
+* Add, edit, and delete expenses.
+* Categorise spending to understand where money goes.
+* View a budget health indicator: **Healthy**, **Watch Spending**, or **Over Budget**.
+
+**Spending calculation:** When an activity has an actual cost entered, that amount is used. Otherwise, its estimated cost is used. This allows spending summaries to reflect recorded expenses and planned costs for activities that have not yet been finalised.
+
+Expense dates must fall within the trip dates.
+
+### 7. Travel Insights
+
+The Insights tab provides a simple overview of trip planning and spending, including:
+
+* Average daily spending
+* Top spending category
+* Planning coverage
+* Activity completion progress
+
+These indicators help users understand their planning progress and budget usage at a glance.
+
+### 8. Responsive Design
+
+TriPlan uses CSS Grid, Flexbox, and media queries to adapt its layouts to different screen sizes.
+
+* Desktop: spacious layouts and multi-column grids.
+* Tablet: adjusted spacing and simplified grid layouts.
+* Mobile: stacked forms, full-width buttons, and a compact header.
+* Small mobile screens: reduced spacing and simplified navigation.
+
+---
+
+## Tech Stack
+
+| Technology             | Purpose                                                                       |
+| ---------------------- | ----------------------------------------------------------------------------- |
+| **HTML5**              | Page structure and semantic markup                                            |
+| **CSS3**               | Styling, custom properties, Flexbox, Grid, and responsive layouts             |
+| **Vanilla JavaScript** | Authentication, application logic, validation, rendering, and data management |
+| **localStorage**       | Browser-based storage for accounts, sessions, and trip data                   |
+| **Unsplash**           | Destination imagery                                                           |
+
+TriPlan uses no JavaScript frameworks, external UI libraries, backend services, or build tools.
+
+---
+
+## Project Structure
+
+```text
 TriPlan/
-├── index.html          Landing page
-├── login.html          Log in and create an account
-├── profile.html        User profile (login required)
-├── create-trip.html    Create a new trip (login required)
-├── trips.html          My Trips list (login required)
-├── trip.html           Trip workspace (login required)
+├── index.html
+├── login.html
+├── profile.html
+├── create-trip.html
+├── trips.html
+├── trip.html
 ├── css/
-│   ├── style.css       Design tokens, global layout, and page sections
-│   ├── components.css  Reusable components (buttons, cards, forms, badges, tabs)
-│   └── responsive.css  Breakpoints for tablet, mobile, and small mobile
+│   ├── style.css
+│   ├── components.css
+│   └── responsive.css
 ├── js/
-│   └── app.js          Authentication, trip storage, rendering, and validation
-├── assets/             Logo and destination images
-├── .gitignore          Files Git should ignore
-└── README.md           Project documentation
-Getting Started
-Requirements
-A modern web browser such as Chrome, Edge, Firefox, or Safari.
-No installation or build step is needed.
-Run the Project
+│   └── app.js
+├── assets/
+├── .gitignore
+└── README.md
+```
 
-Option 1: Open the file
+### File Responsibilities
 
-Download or clone the repository.
-Open the project folder.
-Double-click index.html.
+* `index.html` — Landing page.
+* `login.html` — Login and account registration.
+* `profile.html` — User profile and trip statistics.
+* `create-trip.html` — Trip creation form.
+* `trips.html` — Active and completed trip listings.
+* `trip.html` — Trip workspace and its five tabs.
+* `css/style.css` — Design tokens, global styles, and page layouts.
+* `css/components.css` — Reusable UI components, including buttons, cards, forms, badges, and tabs.
+* `css/responsive.css` — Responsive rules for different screen sizes.
+* `js/app.js` — Application logic, authentication, storage, rendering, and validation.
+* `assets/` — Logo and other project assets.
 
-Option 2: Use a local server
+---
 
-bash
+## Getting Started
+
+### Prerequisites
+
+* A modern web browser such as Google Chrome, Microsoft Edge, Firefox, or Safari.
+* Python installed if you want to use the optional local development server.
+
+No dependency installation or build process is required.
+
+### 1. Clone the Repository
+
+```bash
+git clone <YOUR_REPOSITORY_URL>
+```
+
+Replace `<YOUR_REPOSITORY_URL>` with your actual GitHub repository URL.
+
+### 2. Open the Project Folder
+
+```bash
 cd TriPlan
-python -m http.server
+```
 
-Then open http://localhost:8000 in your browser.
+### 3. Run TriPlan
 
-Test Account
-Field	Value
-Email	admin@triplan.com
-Password	admin@triplan
+**Option A — Open directly**
 
-You can also create your own account from the Create account tab on the login page.
+Open `index.html` in your browser.
 
-Data Storage
+**Option B — Use a local development server (recommended)**
 
-All data is stored in localStorage in your browser.
+```bash
+python -m http.server 8000
+```
 
-Key	What it holds
-triplan_users	Registered accounts (name, email, mobile, password)
-triplan_session	The currently logged-in user
-triplan_trips_<email>	The trips belonging to that user
-Responsive Design
-Breakpoint	Layout changes
-Up to 900px	Single-column hero, two-column grids, adjusted spacing
-Up to 640px	Stacked forms, full-width buttons, compact header
-Up to 400px	Hides header text links and tightens spacing
-Known Limitations
-No backend, so data does not sync across devices.
-Passwords are stored in plain text.
-There is no password reset.
-Amounts are in Indian rupees (₹) only.
-Destination images need an internet connection.
-Future Improvements
-Server-side authentication with hashed passwords
-Cloud storage for accounts and trips
-Export trips to PDF or calendar files
-Trip sharing with other travellers
-Currency conversion
-Security Note
+Open the following address in your browser:
 
-TriPlan is a demonstration project. It is not production-ready. Passwords are stored in plain text in the browser, and login checks run on the client side. Do not use a real personal password in this app. A production version would need a server, hashed passwords, and secure session handling.
+```text
+http://localhost:8000
+```
 
-Author
+Using a local server provides a consistent environment for testing the application.
 
-DHIRAJ MANE
-Built as a resume and portfolio project.
+---
+
+## Test Account
+
+Use the following demonstration credentials if the built-in account is available in your current version.
+
+| Field    | Value               |
+| -------- | ------------------- |
+| Email    | `admin@triplan.com` |
+| Password | `admin@triplan`     |
+
+You can also register a new account through the **Create account** tab on the login page.
+
+> **Note:** The test account credentials are for demonstration purposes only. Do not use them for any real or sensitive information.
+
+---
+
+## Data Storage
+
+TriPlan stores application data in the browser's `localStorage`. No external database or cloud storage is used.
+
+| Storage key             | Purpose                                        |
+| ----------------------- | ---------------------------------------------- |
+| `triplan_users`         | Registered account information                 |
+| `triplan_session`       | Current login session                          |
+| `triplan_trips_<email>` | Trips associated with a specific account email |
+
+### Important Storage Behaviour
+
+* Data remains in the browser until it is cleared or removed by the application.
+* Data does not automatically synchronise across browsers or devices.
+* Different browsers and browser profiles maintain separate storage.
+* Clearing site data can remove locally stored accounts and trips.
+* User-specific storage keys provide application-level data separation, not strong security isolation.
+
+---
+
+## Business Rules
+
+TriPlan follows these core application rules:
+
+1. Trip end dates cannot precede start dates.
+2. Budgets must be positive values.
+3. Activity and expense dates must fall within the associated trip dates.
+4. Actual activity costs take precedence over estimated costs when calculating spending.
+5. Completed trips are read-only.
+6. Trip data is associated with the relevant account.
+7. Budget indicators reflect spending in relation to the estimated budget.
+
+---
+
+## Known Limitations
+
+TriPlan is a front-end demonstration project. Its current limitations include:
+
+* No backend or database.
+* No cloud synchronisation or cross-device access.
+* Passwords are stored in plain text in browser storage.
+* Authentication and access checks run entirely on the client side.
+* No password reset or email verification system.
+* No server-side authorisation or secure session management.
+* Currency is limited to Indian rupees (₹).
+* Destination images require an internet connection.
+* Browser storage can be lost when site data is cleared.
+
+**Security warning:** Do not enter real or reused passwords, sensitive personal information, or confidential travel details. Client-side authentication and `localStorage` are not suitable for securing a production application.
+
+---
+
+## Future Improvements
+
+Potential enhancements for future versions include:
+
+* Backend authentication with securely hashed passwords.
+* Server-side authorisation and session management.
+* Database integration and cloud synchronisation.
+* Password recovery and email verification.
+* Exporting trip plans to PDF and calendar formats.
+* Sharing trips with other travellers.
+* Currency conversion for international travel.
+* Enhanced spending visualisations and analytics.
+* Automated testing and improved accessibility.
+
+---
+
+## Learning Outcomes
+
+TriPlan demonstrates practical front-end development skills, including:
+
+* Building a multi-page web application.
+* Designing responsive interfaces with CSS.
+* Implementing form validation and user interactions.
+* Managing application state with vanilla JavaScript.
+* Using browser storage for persistent data.
+* Creating CRUD operations for trips, activities, and expenses.
+* Implementing client-side authentication flows.
+* Calculating budget summaries and planning insights.
+* Organising a project into reusable stylesheets and application logic.
+
+---
+
+## Author
+
+**Dhiraj Mane**
+
+Built as a resume and portfolio project to demonstrate front-end web development, application design, and practical JavaScript skills.
+
+---
+
+**TriPlan — Plan Smart. Travel Better.**
+
+*Plan your journeys. Organise your activities. Stay on top of your budget.*
