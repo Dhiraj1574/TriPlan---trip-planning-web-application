@@ -2,6 +2,8 @@
 
 **A smart trip-planning web application to organise trips, manage activities, track expenses, and monitor travel budgets in one place.**
 
+🌐 Live Demo: https://dhiraj1574.github.io/TriPlan---trip-planning-web-application/
+
 TriPlan is a responsive, front-end web application designed to make trip planning simple, structured, and manageable. From creating a trip to organising daily activities and tracking actual expenses, TriPlan brings the essential parts of travel planning together in one workspace.
 
 Built with **HTML5, CSS3, and vanilla JavaScript**, TriPlan runs directly in the browser without frameworks, backend services, or a build process.
