@@ -1,0 +1,1286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Trip Workspace — TriPlan</title>
+
+  <meta
+    name="description"
+    content="Plan, organize and track your journey with TriPlan."
+  >
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+
+  <!-- =====================================================
+       HEADER
+       ===================================================== -->
+
+  <header class="site-header">
+
+    <div class="container header-inner">
+
+      <a
+        href="index.html"
+        class="brand"
+        aria-label="TriPlan home"
+      >
+
+        <img
+          src="assets/triplan-logo.png"
+          alt=""
+          class="brand-logo"
+        >
+
+        <span
+          class="brand-wordmark"
+          aria-hidden="true"
+        >
+          <span class="brand-tri">Tri</span><span class="brand-p">P</span><span class="brand-lan">lan</span>
+        </span>
+
+      </a>
+
+
+      <nav
+        class="main-nav"
+        aria-label="Main navigation"
+      >
+
+        <a
+          href="index.html"
+          class="nav-link"
+        >
+          Home
+        </a>
+
+        <a
+          href="trips.html"
+          class="nav-link active"
+        >
+          My Trips
+        </a>
+
+        <a
+          href="create-trip.html"
+          class="nav-button"
+        >
+          Create Trip
+        </a>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+
+  <main>
+
+    <!-- =====================================================
+         TRIP WORKSPACE HEADER
+         ===================================================== -->
+
+    <section class="page-header-section trip-workspace-header">
+
+      <div class="container">
+
+        <a
+          href="trips.html"
+          class="workspace-back-link"
+        >
+          ← Back to My Trips
+        </a>
+
+
+        <div class="trip-header-content">
+
+          <div>
+
+            <span class="eyebrow">
+              TRIP WORKSPACE
+            </span>
+
+
+            <!-- =================================================
+                 TRIP TITLE + STATUS
+                 ================================================= -->
+
+            <div class="trip-title-row">
+
+              <h1 id="tripTitle">
+                Your Trip
+              </h1>
+
+              <!--
+                Trip status is controlled by app.js.
+
+                Possible states:
+                - Upcoming
+                - Ongoing
+                - Completed
+              -->
+
+              <span
+                id="tripStatusBadge"
+                class="status-badge status-badge-upcoming"
+                aria-live="polite"
+              >
+                Upcoming
+              </span>
+
+            </div>
+
+
+            <p id="tripDestination">
+              Destination
+            </p>
+
+          </div>
+
+
+          <div class="trip-header-dates">
+
+            <span class="trip-header-label">
+              TRIP DATES
+            </span>
+
+            <strong id="tripDates">
+              —
+            </strong>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         WORKSPACE
+         ===================================================== -->
+
+    <section class="workspace-section">
+
+      <div class="container">
+
+
+        <!-- =================================================
+             WORKSPACE TABS
+             ================================================= -->
+
+        <nav
+          class="workspace-tabs"
+          aria-label="Trip workspace sections"
+        >
+
+          <button
+            type="button"
+            class="workspace-tab active"
+            data-workspace-tab="overview"
+          >
+            Overview
+          </button>
+
+          <button
+            type="button"
+            class="workspace-tab"
+            data-workspace-tab="plan"
+          >
+            Trip Plan
+          </button>
+
+          <button
+            type="button"
+            class="workspace-tab"
+            data-workspace-tab="activities"
+          >
+            Activities
+          </button>
+
+          <button
+            type="button"
+            class="workspace-tab"
+            data-workspace-tab="budget"
+          >
+            Budget
+          </button>
+
+          <button
+            type="button"
+            class="workspace-tab"
+            data-workspace-tab="insights"
+          >
+            Insights
+          </button>
+
+        </nav>
+
+
+        <!-- =================================================
+             OVERVIEW
+             ================================================= -->
+
+        <section
+          id="overviewPanel"
+          class="workspace-panel active"
+          data-workspace-panel="overview"
+        >
+
+          <div class="workspace-panel-heading">
+
+            <div>
+
+              <span class="eyebrow">
+                OVERVIEW
+              </span>
+
+              <h2>
+                Your journey at a glance.
+              </h2>
+
+              <p>
+                Keep track of your trip progress, activities and spending
+                from one organized workspace.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div class="overview-grid">
+
+            <article class="workspace-stat-card">
+
+              <span class="workspace-stat-label">
+                ACTIVITIES
+              </span>
+
+              <strong id="overviewActivityCount">
+                0
+              </strong>
+
+              <span>
+                Total planned activities
+              </span>
+
+            </article>
+
+
+            <article class="workspace-stat-card">
+
+              <span class="workspace-stat-label">
+                COMPLETION
+              </span>
+
+              <strong id="overviewProgress">
+                0%
+              </strong>
+
+              <span>
+                Activity completion
+              </span>
+
+            </article>
+
+
+            <article class="workspace-stat-card">
+
+              <span class="workspace-stat-label">
+                SPENT
+              </span>
+
+              <strong id="overviewSpent">
+                ₹0
+              </strong>
+
+              <span>
+                Total trip spending
+              </span>
+
+            </article>
+
+
+            <article class="workspace-stat-card">
+
+              <span class="workspace-stat-label">
+                REMAINING
+              </span>
+
+              <strong id="overviewRemaining">
+                ₹0
+              </strong>
+
+              <span>
+                Budget remaining
+              </span>
+
+            </article>
+
+          </div>
+
+        </section>
+
+
+        <!-- =================================================
+             TRIP PLAN
+             ================================================= -->
+
+        <section
+          id="planPanel"
+          class="workspace-panel"
+          data-workspace-panel="plan"
+          hidden
+        >
+
+          <div class="workspace-panel-heading">
+
+            <div>
+
+              <span class="eyebrow">
+                TRIP PLAN
+              </span>
+
+              <h2>
+                Your journey, day by day.
+              </h2>
+
+              <p>
+                Organize your activities across the dates of your trip.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div
+            id="tripPlanContainer"
+            class="trip-plan-container"
+          ></div>
+
+        </section>
+
+
+        <!-- =================================================
+             ACTIVITIES
+             ================================================= -->
+
+        <section
+          id="activitiesPanel"
+          class="workspace-panel"
+          data-workspace-panel="activities"
+          hidden
+        >
+
+          <div class="workspace-panel-heading">
+
+            <div>
+
+              <span class="eyebrow">
+                ACTIVITIES
+              </span>
+
+              <h2>
+                Plan what you want to do.
+              </h2>
+
+              <p>
+                Add activities and keep them connected to your trip dates.
+              </p>
+
+            </div>
+
+
+            <button
+              type="button"
+              class="button button-primary"
+              id="addActivityButton"
+            >
+              Add Activity
+            </button>
+
+          </div>
+
+
+          <!-- =================================================
+               ACTIVITY FORM
+               ================================================= -->
+
+          <div
+            id="activityFormContainer"
+            class="workspace-form-container"
+            hidden
+          >
+
+            <form
+              id="activityForm"
+              class="form-card"
+              novalidate
+            >
+
+              <input
+                type="hidden"
+                id="editingActivityId"
+                name="editingActivityId"
+                value=""
+              >
+
+
+              <div class="form-section-heading">
+
+                <span
+                  class="form-section-number"
+                  id="activityFormNumber"
+                >
+                  01
+                </span>
+
+                <div>
+
+                  <h2 id="activityFormTitle">
+                    Add activity
+                  </h2>
+
+                  <p id="activityFormDescription">
+                    Add an activity to your trip plan.
+                  </p>
+
+                </div>
+
+              </div>
+
+
+              <div class="form-grid">
+
+                <div class="form-group form-group-full">
+
+                  <label for="activityName">
+                    Activity name
+                  </label>
+
+                  <input
+                    type="text"
+                    id="activityName"
+                    name="activityName"
+                    class="form-input"
+                    placeholder="Example: Visit Baga Beach"
+                    autocomplete="off"
+                    required
+                  >
+
+                  <span
+                    class="form-error"
+                    id="activityNameError"
+                    aria-live="polite"
+                  ></span>
+
+                </div>
+
+
+                <div class="form-group">
+
+                  <label for="activityDate">
+                    Date
+                  </label>
+
+                  <input
+                    type="date"
+                    id="activityDate"
+                    name="activityDate"
+                    class="form-input"
+                    required
+                  >
+
+                  <span
+                    class="form-error"
+                    id="activityDateError"
+                    aria-live="polite"
+                  ></span>
+
+                </div>
+
+
+                <div class="form-group">
+
+                  <label for="activityTime">
+                    Start time
+                  </label>
+
+                  <input
+                    type="time"
+                    id="activityTime"
+                    name="activityTime"
+                    class="form-input"
+                    required
+                  >
+
+                  <span
+                    class="form-error"
+                    id="activityTimeError"
+                    aria-live="polite"
+                  ></span>
+
+                </div>
+
+
+                <div class="form-group">
+
+                  <label for="activityLocation">
+                    Location
+                  </label>
+
+                  <input
+                    type="text"
+                    id="activityLocation"
+                    name="activityLocation"
+                    class="form-input"
+                    placeholder="Example: Baga Beach"
+                    autocomplete="off"
+                    required
+                  >
+
+                  <span
+                    class="form-error"
+                    id="activityLocationError"
+                    aria-live="polite"
+                  ></span>
+
+                </div>
+
+
+                <!-- =================================================
+                     ACTIVITY CATEGORY
+                     ================================================= -->
+
+                <div class="form-group">
+
+                  <label for="activityCategory">
+                    Category
+                  </label>
+
+                  <select
+                    id="activityCategory"
+                    name="activityCategory"
+                    class="form-input"
+                    required
+                  >
+
+                    <option value="">
+                      Select category
+                    </option>
+
+                    <option value="Accommodation">
+                      Accommodation
+                    </option>
+
+                    <option value="Food">
+                      Food
+                    </option>
+
+                    <option value="Transport">
+                      Transport
+                    </option>
+
+                    <option value="Activities">
+                      Activities
+                    </option>
+
+                    <option value="Shopping">
+                      Shopping
+                    </option>
+
+                    <option value="Other">
+                      Other
+                    </option>
+
+                  </select>
+
+                  <span
+                    class="form-error"
+                    id="activityCategoryError"
+                    aria-live="polite"
+                  ></span>
+
+                </div>
+
+
+                <div class="form-group">
+
+                  <label for="activityEstimatedCost">
+                    Estimated cost
+                  </label>
+
+                  <div class="input-with-prefix">
+
+                    <span class="input-prefix">
+                      ₹
+                    </span>
+
+                    <input
+                      type="number"
+                      id="activityEstimatedCost"
+                      name="activityEstimatedCost"
+                      class="form-input"
+                      placeholder="1000"
+                      min="0"
+                      step="1"
+                      inputmode="numeric"
+                      required
+                    >
+
+                  </div>
+
+                  <span
+                    class="form-error"
+                    id="activityEstimatedCostError"
+                    aria-live="polite"
+                  ></span>
+
+                </div>
+
+
+                <div class="form-group">
+
+                  <label for="activityActualCost">
+                    Actual cost spent
+                  </label>
+
+                  <div class="input-with-prefix">
+
+                    <span class="input-prefix">
+                      ₹
+                    </span>
+
+                    <input
+                      type="number"
+                      id="activityActualCost"
+                      name="activityActualCost"
+                      class="form-input"
+                      placeholder="0"
+                      min="0"
+                      step="1"
+                      inputmode="numeric"
+                    >
+
+                  </div>
+
+                  <span
+                    class="form-error"
+                    id="activityActualCostError"
+                    aria-live="polite"
+                  ></span>
+
+                </div>
+
+
+                <div class="form-group form-group-full">
+
+                  <label for="activityNotes">
+                    Notes
+                  </label>
+
+                  <textarea
+                    id="activityNotes"
+                    name="activityNotes"
+                    class="form-input"
+                    rows="4"
+                    placeholder="Add any useful notes..."
+                  ></textarea>
+
+                  <span
+                    class="form-error"
+                    id="activityNotesError"
+                    aria-live="polite"
+                  ></span>
+
+                </div>
+
+              </div>
+
+
+              <div class="form-actions">
+
+                <button
+                  type="button"
+                  class="button button-secondary"
+                  id="cancelActivityButton"
+                >
+                  Cancel
+                </button>
+
+                <button
+                  type="submit"
+                  class="button button-primary"
+                  id="saveActivityButton"
+                >
+                  Save Activity
+                </button>
+
+              </div>
+
+            </form>
+
+          </div>
+
+
+          <!-- =================================================
+               ACTIVITIES LIST
+               ================================================= -->
+
+          <div
+            id="activitiesList"
+            class="workspace-list"
+          ></div>
+
+        </section>
+
+
+        <!-- =================================================
+             BUDGET
+             ================================================= -->
+
+        <section
+          id="budgetPanel"
+          class="workspace-panel"
+          data-workspace-panel="budget"
+          hidden
+        >
+
+          <div class="workspace-panel-heading">
+
+            <div>
+
+              <span class="eyebrow">
+                BUDGET
+              </span>
+
+              <h2>
+                Know where your money stands.
+              </h2>
+
+              <p>
+                Track your estimated budget, actual spending and remaining
+                amount throughout the journey.
+              </p>
+
+            </div>
+
+
+            <button
+              type="button"
+              class="button button-primary"
+              id="addExpenseButton"
+            >
+              Add Expense
+            </button>
+
+          </div>
+
+
+          <!-- =================================================
+               BUDGET SUMMARY
+               ================================================= -->
+
+          <div class="budget-summary-grid">
+
+            <article class="workspace-stat-card">
+
+              <span class="workspace-stat-label">
+                ESTIMATED BUDGET
+              </span>
+
+              <strong id="budgetEstimated">
+                ₹0
+              </strong>
+
+              <span>
+                Your planned trip budget
+              </span>
+
+            </article>
+
+
+            <article class="workspace-stat-card">
+
+              <span class="workspace-stat-label">
+                TOTAL SPENT
+              </span>
+
+              <strong id="budgetSpent">
+                ₹0
+              </strong>
+
+              <span>
+                Your actual spending
+              </span>
+
+            </article>
+
+
+            <article class="workspace-stat-card">
+
+              <span class="workspace-stat-label">
+                REMAINING
+              </span>
+
+              <strong id="budgetRemaining">
+                ₹0
+              </strong>
+
+              <span>
+                Budget after spending
+              </span>
+
+            </article>
+
+
+            <article class="workspace-stat-card">
+
+              <span class="workspace-stat-label">
+                BUDGET HEALTH
+              </span>
+
+              <strong id="budgetHealth">
+                Healthy
+              </strong>
+
+              <span>
+                Based on current spending
+              </span>
+
+            </article>
+
+          </div>
+
+
+          <!-- =================================================
+               EXPENSE FORM
+               ================================================= -->
+
+          <div
+            id="expenseFormContainer"
+            class="workspace-form-container"
+            hidden
+          >
+
+            <form
+              id="expenseForm"
+              class="form-card"
+              novalidate
+            >
+
+              <input
+                type="hidden"
+                id="editingExpenseId"
+                name="editingExpenseId"
+                value=""
+              >
+
+
+              <div class="form-section-heading">
+
+                <span
+                  class="form-section-number"
+                  id="expenseFormNumber"
+                >
+                  01
+                </span>
+
+                <div>
+
+                  <h2 id="expenseFormTitle">
+                    Add expense
+                  </h2>
+
+                  <p id="expenseFormDescription">
+                    Record money you have actually spent during the trip.
+                  </p>
+
+                </div>
+
+              </div>
+
+
+              <div class="form-grid">
+
+                <div class="form-group form-group-full">
+
+                  <label for="expenseName">
+                    Expense name
+                  </label>
+
+                  <input
+                    type="text"
+                    id="expenseName"
+                    name="expenseName"
+                    class="form-input"
+                    placeholder="Example: Hotel booking"
+                    autocomplete="off"
+                    required
+                  >
+
+                  <span
+                    class="form-error"
+                    id="expenseNameError"
+                    aria-live="polite"
+                  ></span>
+
+                </div>
+
+
+                <div class="form-group">
+
+                  <label for="expenseAmount">
+                    Amount spent
+                  </label>
+
+                  <div class="input-with-prefix">
+
+                    <span class="input-prefix">
+                      ₹
+                    </span>
+
+                    <input
+                      type="number"
+                      id="expenseAmount"
+                      name="expenseAmount"
+                      class="form-input"
+                      placeholder="2500"
+                      min="0"
+                      step="1"
+                      inputmode="numeric"
+                      required
+                    >
+
+                  </div>
+
+                  <span
+                    class="form-error"
+                    id="expenseAmountError"
+                    aria-live="polite"
+                  ></span>
+
+                </div>
+
+
+                <div class="form-group">
+
+                  <label for="expenseCategory">
+                    Category
+                  </label>
+
+                  <select
+                    id="expenseCategory"
+                    name="expenseCategory"
+                    class="form-input"
+                    required
+                  >
+
+                    <option value="">
+                      Select category
+                    </option>
+
+                    <option value="Accommodation">
+                      Accommodation
+                    </option>
+
+                    <option value="Food">
+                      Food
+                    </option>
+
+                    <option value="Transport">
+                      Transport
+                    </option>
+
+                    <option value="Activities">
+                      Activities
+                    </option>
+
+                    <option value="Shopping">
+                      Shopping
+                    </option>
+
+                    <option value="Other">
+                      Other
+                    </option>
+
+                  </select>
+
+                  <span
+                    class="form-error"
+                    id="expenseCategoryError"
+                    aria-live="polite"
+                  ></span>
+
+                </div>
+
+
+                <div class="form-group">
+
+                  <label for="expenseDate">
+                    Date
+                  </label>
+
+                  <input
+                    type="date"
+                    id="expenseDate"
+                    name="expenseDate"
+                    class="form-input"
+                    required
+                  >
+
+                  <span
+                    class="form-error"
+                    id="expenseDateError"
+                    aria-live="polite"
+                  ></span>
+
+                </div>
+
+              </div>
+
+
+              <div class="form-actions">
+
+                <button
+                  type="button"
+                  class="button button-secondary"
+                  id="cancelExpenseButton"
+                >
+                  Cancel
+                </button>
+
+                <button
+                  type="submit"
+                  class="button button-primary"
+                  id="saveExpenseButton"
+                >
+                  Save Expense
+                </button>
+
+              </div>
+
+            </form>
+
+          </div>
+
+
+          <!-- =================================================
+               EXPENSE LIST
+               ================================================= -->
+
+          <div class="workspace-list-section">
+
+            <div class="workspace-list-heading">
+
+              <h3>
+                Expenses
+              </h3>
+
+            </div>
+
+
+            <div
+              id="expensesList"
+              class="workspace-list"
+            ></div>
+
+          </div>
+
+        </section>
+
+
+        <!-- =================================================
+             INSIGHTS
+             ================================================= -->
+
+        <section
+          id="insightsPanel"
+          class="workspace-panel"
+          data-workspace-panel="insights"
+          hidden
+        >
+
+          <div class="workspace-panel-heading">
+
+            <div>
+
+              <span class="eyebrow">
+                INSIGHTS
+              </span>
+
+              <h2>
+                Understand your trip better.
+              </h2>
+
+              <p>
+                Simple insights based on your actual planning and spending
+                data.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div class="insights-grid">
+
+            <article class="insight-card">
+
+              <span class="insight-label">
+                DAILY SPENDING
+              </span>
+
+              <strong id="insightDailySpending">
+                ₹0
+              </strong>
+
+              <p>
+                Average spending per trip day.
+              </p>
+
+            </article>
+
+
+            <article class="insight-card">
+
+              <span class="insight-label">
+                TOP CATEGORY
+              </span>
+
+              <strong id="insightTopCategory">
+                —
+              </strong>
+
+              <p>
+                Your highest spending category.
+              </p>
+
+            </article>
+
+
+            <article class="insight-card">
+
+              <span class="insight-label">
+                PLANNING COVERAGE
+              </span>
+
+              <strong id="insightPlanningCoverage">
+                0%
+              </strong>
+
+              <p>
+                Trip days with planned activities.
+              </p>
+
+            </article>
+
+
+            <article class="insight-card">
+
+              <span class="insight-label">
+                ACTIVITY PROGRESS
+              </span>
+
+              <strong id="insightActivityProgress">
+                0%
+              </strong>
+
+              <p>
+                Completed activities out of total activities.
+              </p>
+
+            </article>
+
+          </div>
+
+        </section>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =====================================================
+       FOOTER
+       ===================================================== -->
+
+  <footer class="site-footer">
+
+    <div class="container footer-inner">
+
+      <div class="footer-brand">
+
+        <a
+          href="index.html"
+          class="brand footer-brand-lockup"
+          aria-label="TriPlan home"
+        >
+
+          <img
+            src="assets/triplan-logo.png"
+            alt=""
+            class="brand-logo"
+          >
+
+          <span
+            class="brand-wordmark"
+            aria-hidden="true"
+          >
+            <span class="brand-tri">Tri</span><span class="brand-p">P</span><span class="brand-lan">lan</span>
+          </span>
+
+        </a>
+
+        <p>
+          Plan Smart. Travel Better.
+        </p>
+
+      </div>
+
+
+      <nav
+        class="footer-nav"
+        aria-label="Footer navigation"
+      >
+
+        <a href="index.html">
+          Home
+        </a>
+
+        <a href="trips.html">
+          My Trips
+        </a>
+
+        <a href="create-trip.html">
+          Create Trip
+        </a>
+
+      </nav>
+
+
+      <p class="footer-copy">
+        &copy; 2026 TriPlan. All rights reserved.
+      </p>
+
+    </div>
+
+  </footer>
+
+
+  <script src="js/app.js"></script>
+
+</body>
+</html>

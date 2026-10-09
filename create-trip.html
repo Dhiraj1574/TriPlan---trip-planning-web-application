@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Create Trip — TriPlan</title>
+  <meta
+    name="description"
+    content="Create and organize your next journey with TriPlan."
+  >
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+
+  <!-- =====================================================
+       HEADER
+       ===================================================== -->
+  <header class="site-header">
+    <div class="container header-inner">
+
+      <a href="index.html" class="brand" aria-label="TriPlan home">
+        <img src="assets/triplan-logo.png" alt="" class="brand-logo">
+
+        <span class="brand-wordmark" aria-hidden="true">
+          <span class="brand-tri">Tri</span><span class="brand-p">P</span><span class="brand-lan">lan</span>
+        </span>
+      </a>
+
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="trips.html" class="nav-link">My Trips</a>
+        <a href="create-trip.html" class="nav-button active">Create Trip</a>
+      </nav>
+
+    </div>
+  </header>
+
+
+  <main>
+
+    <!-- =====================================================
+         PAGE HEADER
+         ===================================================== -->
+    <section class="page-header-section">
+      <div class="container">
+
+        <span class="eyebrow">CREATE YOUR TRIP</span>
+
+        <h1>Start planning your journey.</h1>
+
+        <p>
+          Add your trip details and traveler information to create
+          your organized TriPlan workspace.
+        </p>
+
+      </div>
+    </section>
+
+
+    <!-- =====================================================
+         CREATE TRIP FORM
+         ===================================================== -->
+    <section class="form-section">
+      <div class="container form-container">
+
+        <form id="createTripForm" class="form-card" novalidate>
+
+          <!-- =====================================================
+               TRIP DETAILS
+               ===================================================== -->
+          <div class="form-section-block">
+
+            <div class="form-section-heading">
+              <span class="form-section-number">01</span>
+
+              <div>
+                <h2>Trip details</h2>
+                <p>Tell us about the journey you are planning.</p>
+              </div>
+            </div>
+
+
+            <div class="form-grid">
+
+              <div class="form-group form-group-full">
+                <label for="tripName">Trip name</label>
+
+                <input
+                  type="text"
+                  id="tripName"
+                  name="tripName"
+                  class="form-input"
+                  placeholder="Example: Goa Weekend"
+                  autocomplete="off"
+                  required
+                >
+
+                <span
+                  class="form-error"
+                  id="tripNameError"
+                  aria-live="polite"
+                ></span>
+              </div>
+
+
+              <div class="form-group form-group-full">
+                <label for="destination">Destination</label>
+
+                <input
+                  type="text"
+                  id="destination"
+                  name="destination"
+                  class="form-input"
+                  placeholder="Example: Goa, India"
+                  autocomplete="off"
+                  required
+                >
+
+                <span
+                  class="form-error"
+                  id="destinationError"
+                  aria-live="polite"
+                ></span>
+              </div>
+
+
+              <div class="form-group">
+                <label for="startDate">Start date</label>
+
+                <input
+                  type="date"
+                  id="startDate"
+                  name="startDate"
+                  class="form-input"
+                  required
+                >
+
+                <span
+                  class="form-error"
+                  id="startDateError"
+                  aria-live="polite"
+                ></span>
+              </div>
+
+
+              <div class="form-group">
+                <label for="endDate">End date</label>
+
+                <input
+                  type="date"
+                  id="endDate"
+                  name="endDate"
+                  class="form-input"
+                  required
+                >
+
+                <span
+                  class="form-error"
+                  id="endDateError"
+                  aria-live="polite"
+                ></span>
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- =====================================================
+               TRAVELER DETAILS
+               ===================================================== -->
+          <div class="form-section-block">
+
+            <div class="form-section-heading">
+              <span class="form-section-number">02</span>
+
+              <div>
+                <h2>Traveler information</h2>
+                <p>Add the main traveler details for this trip.</p>
+              </div>
+            </div>
+
+
+            <div class="form-grid">
+
+              <div class="form-group">
+                <label for="travelerName">Traveler name</label>
+
+                <input
+                  type="text"
+                  id="travelerName"
+                  name="travelerName"
+                  class="form-input"
+                  placeholder="Enter full name"
+                  autocomplete="name"
+                  required
+                >
+
+                <span
+                  class="form-error"
+                  id="travelerNameError"
+                  aria-live="polite"
+                ></span>
+              </div>
+
+
+              <div class="form-group">
+                <label for="travelerMobile">Indian mobile number</label>
+
+                <input
+                  type="tel"
+                  id="travelerMobile"
+                  name="travelerMobile"
+                  class="form-input"
+                  placeholder="9876543210"
+                  inputmode="numeric"
+                  maxlength="10"
+                  autocomplete="tel"
+                  required
+                >
+
+                <span
+                  class="form-error"
+                  id="travelerMobileError"
+                  aria-live="polite"
+                ></span>
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- =====================================================
+              BUDGET
+              ===================================================== -->
+          <div class="form-section-block">
+
+            <div class="form-section-heading">
+              <span class="form-section-number">03</span>
+
+              <div>
+                <h2>Trip budget</h2>
+                <p>Set the amount you expect to spend on this journey.</p>
+              </div>
+            </div>
+
+
+            <div class="form-grid">
+
+              <div class="form-group">
+                <label for="estimatedBudget">Estimated budget</label>
+
+                <div class="input-with-prefix">
+                  <span class="input-prefix">₹</span>
+
+                  <input
+                    type="number"
+                    id="estimatedBudget"
+                    name="estimatedBudget"
+                    class="form-input"
+                    placeholder="50000"
+                    min="0"
+                    step="1"
+                    inputmode="numeric"
+                    required
+                  >
+                </div>
+
+                <span
+                  class="form-error"
+                  id="estimatedBudgetError"
+                  aria-live="polite"
+                ></span>
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- =====================================================
+              FORM ACTIONS
+              ===================================================== -->
+          <div class="form-actions">
+
+            <a href="index.html" class="button button-secondary">
+              Cancel
+            </a>
+
+            <button
+              type="submit"
+              class="button button-primary"
+            >
+              Create Trip
+            </button>
+
+          </div>
+
+        </form>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- =====================================================
+       FOOTER
+       ===================================================== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+
+      <div class="footer-brand">
+        <a
+          href="index.html"
+          class="brand footer-brand-lockup"
+          aria-label="TriPlan home"
+        >
+          <img src="assets/triplan-logo.png" alt="" class="brand-logo">
+
+          <span class="brand-wordmark" aria-hidden="true">
+            <span class="brand-tri">Tri</span><span class="brand-p">P</span><span class="brand-lan">lan</span>
+          </span>
+        </a>
+
+        <p>Plan Smart. Travel Better.</p>
+      </div>
+
+
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="index.html">Home</a>
+        <a href="trips.html">My Trips</a>
+        <a href="create-trip.html">Create Trip</a>
+      </nav>
+
+
+      <p class="footer-copy">
+        &copy; 2026 TriPlan. All rights reserved.
+      </p>
+
+    </div>
+  </footer>
+
+
+  <script src="js/app.js"></script>
+
+</body>
+</html>

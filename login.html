@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Log In — TriPlan</title>
+  <meta
+    name="description"
+    content="Log in or create your TriPlan account."
+  >
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+
+  <!-- =====================================================
+       HEADER
+       ===================================================== -->
+  <header class="site-header">
+    <div class="container header-inner">
+
+      <a href="index.html" class="brand" aria-label="TriPlan home">
+        <img src="assets/triplan-logo.png" alt="" class="brand-logo">
+
+        <span class="brand-wordmark" aria-hidden="true">
+          <span class="brand-tri">Tri</span><span class="brand-p">P</span><span class="brand-lan">lan</span>
+        </span>
+      </a>
+
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="trips.html" class="nav-link">My Trips</a>
+        <div class="auth-nav" id="authNav"></div>
+      </nav>
+
+    </div>
+  </header>
+
+
+  <main>
+
+    <!-- =====================================================
+         PAGE HEADER
+         ===================================================== -->
+    <section class="page-header-section">
+      <div class="container">
+
+        <span class="eyebrow">WELCOME TO TRIPLAN</span>
+
+        <h1>Log in to your journeys.</h1>
+
+        <p>
+          Sign in to access your trips, or create an account to start planning.
+        </p>
+
+      </div>
+    </section>
+
+
+    <!-- =====================================================
+         AUTH FORMS
+         ===================================================== -->
+    <section class="form-section">
+      <div class="container form-container">
+
+        <div class="tabs auth-tabs" role="tablist">
+          <button
+            type="button"
+            class="tab-button active"
+            data-auth-tab="login"
+            role="tab"
+          >
+            Log in
+          </button>
+
+          <button
+            type="button"
+            class="tab-button"
+            data-auth-tab="signup"
+            role="tab"
+          >
+            Create account
+          </button>
+        </div>
+
+
+        <!-- =================================================
+             LOGIN
+             ================================================= -->
+        <div id="loginPanel">
+
+          <form id="loginForm" class="form-card" novalidate>
+
+            <div class="form-section-heading">
+              <span class="form-section-number">01</span>
+
+              <div>
+                <h2>Log in</h2>
+                <p>Enter your email and password to continue.</p>
+              </div>
+            </div>
+
+            <div class="form-grid">
+
+              <div class="form-group form-group-full">
+                <label for="loginEmail">Email address</label>
+
+                <input
+                  type="email"
+                  id="loginEmail"
+                  name="loginEmail"
+                  class="form-input"
+                  placeholder="you@example.com"
+                  autocomplete="email"
+                  required
+                >
+
+                <span class="form-error" id="loginEmailError" aria-live="polite"></span>
+              </div>
+
+
+              <div class="form-group form-group-full">
+                <label for="loginPassword">Password</label>
+
+                <input
+                  type="password"
+                  id="loginPassword"
+                  name="loginPassword"
+                  class="form-input"
+                  placeholder="Enter your password"
+                  autocomplete="current-password"
+                  required
+                >
+
+                <span class="form-error" id="loginPasswordError" aria-live="polite"></span>
+              </div>
+
+            </div>
+
+            <span class="form-error" id="loginFormError" aria-live="polite"></span>
+
+            <div class="form-actions">
+              <button type="submit" class="button button-primary">
+                Log in
+              </button>
+            </div>
+
+          </form>
+
+        </div>
+
+
+        <!-- =================================================
+             CREATE ACCOUNT
+             ================================================= -->
+        <div id="signupPanel" hidden>
+
+          <form id="signupForm" class="form-card" novalidate>
+
+            <div class="form-section-heading">
+              <span class="form-section-number">01</span>
+
+              <div>
+                <h2>Create account</h2>
+                <p>Your details are used to personalise your trip workspace.</p>
+              </div>
+            </div>
+
+            <div class="form-grid">
+
+              <div class="form-group form-group-full">
+                <label for="signupName">Full name</label>
+
+                <input
+                  type="text"
+                  id="signupName"
+                  name="signupName"
+                  class="form-input"
+                  placeholder="Enter full name"
+                  autocomplete="name"
+                  required
+                >
+
+                <span class="form-error" id="signupNameError" aria-live="polite"></span>
+              </div>
+
+
+              <div class="form-group">
+                <label for="signupEmail">Email address</label>
+
+                <input
+                  type="email"
+                  id="signupEmail"
+                  name="signupEmail"
+                  class="form-input"
+                  placeholder="you@example.com"
+                  autocomplete="email"
+                  required
+                >
+
+                <span class="form-error" id="signupEmailError" aria-live="polite"></span>
+              </div>
+
+
+              <div class="form-group">
+                <label for="signupMobile">Indian mobile number</label>
+
+                <input
+                  type="tel"
+                  id="signupMobile"
+                  name="signupMobile"
+                  class="form-input"
+                  placeholder="9876543210"
+                  inputmode="numeric"
+                  maxlength="10"
+                  autocomplete="tel"
+                  required
+                >
+
+                <span class="form-error" id="signupMobileError" aria-live="polite"></span>
+              </div>
+
+
+              <div class="form-group">
+                <label for="signupPassword">Password</label>
+
+                <input
+                  type="password"
+                  id="signupPassword"
+                  name="signupPassword"
+                  class="form-input"
+                  placeholder="At least 8 characters"
+                  autocomplete="new-password"
+                  required
+                >
+
+                <span class="form-error" id="signupPasswordError" aria-live="polite"></span>
+              </div>
+
+
+              <div class="form-group">
+                <label for="signupConfirmPassword">Confirm password</label>
+
+                <input
+                  type="password"
+                  id="signupConfirmPassword"
+                  name="signupConfirmPassword"
+                  class="form-input"
+                  placeholder="Re-enter your password"
+                  autocomplete="new-password"
+                  required
+                >
+
+                <span class="form-error" id="signupConfirmPasswordError" aria-live="polite"></span>
+              </div>
+
+            </div>
+
+            <span class="form-error" id="signupFormError" aria-live="polite"></span>
+
+            <div class="form-actions">
+              <button type="submit" class="button button-primary">
+                Create account
+              </button>
+            </div>
+
+          </form>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- =====================================================
+       FOOTER
+       ===================================================== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+
+      <div class="footer-brand">
+        <a href="index.html" class="brand footer-brand-lockup" aria-label="TriPlan home">
+          <img src="assets/triplan-logo.png" alt="" class="brand-logo">
+
+          <span class="brand-wordmark" aria-hidden="true">
+            <span class="brand-tri">Tri</span><span class="brand-p">P</span><span class="brand-lan">lan</span>
+          </span>
+        </a>
+
+        <p>Plan Smart. Travel Better.</p>
+      </div>
+
+
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="index.html">Home</a>
+        <a href="trips.html">My Trips</a>
+        <a href="create-trip.html">Create Trip</a>
+      </nav>
+
+
+      <p class="footer-copy">
+        &copy; 2026 TriPlan. All rights reserved.
+      </p>
+
+    </div>
+  </footer>
+
+
+  <script src="js/app.js"></script>
+
+</body>
+</html>

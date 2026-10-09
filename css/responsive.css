@@ -1,0 +1,721 @@
+/* =====================================================
+   TRIPLAN — RESPONSIVE.CSS
+   Breakpoints: tablet (900px), mobile (640px), small mobile (400px)
+   ===================================================== */
+
+
+/* =====================================================
+   TABLET (max-width: 900px)
+   ===================================================== */
+
+@media (max-width: 900px) {
+
+  .container {
+    width: min(calc(100% - 40px), var(--container));
+  }
+
+  /* Hero */
+
+  .hero-section {
+    min-height: auto;
+    padding: 80px 0;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 55px;
+    text-align: center;
+  }
+
+  .hero-content {
+    max-width: 680px;
+    margin: 0 auto;
+  }
+
+  .hero-content h1 {
+    margin: 0 auto;
+  }
+
+  .hero-description {
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .hero-actions {
+    justify-content: center;
+  }
+
+  .hero-visual {
+    width: min(390px, 85vw);
+  }
+
+  /* Features and workflow */
+
+  .feature-grid,
+  .workflow-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .feature-card,
+  .workflow-card {
+    min-height: auto;
+  }
+
+  /* Destinations */
+
+  .destination-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+  }
+
+  .destination-card {
+    height: 220px;
+  }
+
+  /* CTA */
+
+  .final-cta {
+    padding: 38px;
+  }
+
+  /* Footer */
+
+  .footer-inner {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    padding: 32px 0;
+    text-align: center;
+  }
+
+  .footer-copy {
+    justify-self: center;
+  }
+
+  /* Workspace */
+
+  .workspace-tabs {
+    margin-bottom: 26px;
+  }
+
+  .workspace-tab {
+    flex: 0 0 auto;
+    padding: 0 16px;
+  }
+
+  .budget-summary-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .activity-card-header {
+    gap: 14px;
+  }
+
+  .activity-card-actions {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
+  .expense-card {
+    gap: 14px;
+  }
+
+  /* Forms */
+
+  .form-section-block + .form-section-block {
+    margin-top: 38px;
+    padding-top: 32px;
+  }
+
+  .form-grid {
+    column-gap: 18px;
+    row-gap: 20px;
+  }
+
+  .form-section-heading {
+    margin-bottom: 22px;
+  }
+
+  /* Trips */
+
+  .trips-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+/* =====================================================
+   MOBILE (max-width: 640px)
+   ===================================================== */
+
+@media (max-width: 640px) {
+
+  .container {
+    width: min(calc(100% - 32px), var(--container));
+  }
+
+  /* Header */
+
+  .header-inner {
+    min-height: 64px;
+  }
+
+  .brand {
+    gap: 8px;
+  }
+
+  .brand-mark {
+    width: 31px;
+    height: 31px;
+    border-radius: 8px;
+    font-size: 14px;
+  }
+
+  .brand-name {
+    font-size: 17px;
+  }
+
+  .main-nav {
+    gap: 13px;
+  }
+
+  .nav-link {
+    font-size: 12px;
+  }
+
+  .nav-button {
+    min-height: 38px;
+    padding: 0 12px;
+    font-size: 12px;
+  }
+
+  /* Hero */
+
+  .hero-section {
+    padding: 64px 0 70px;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(38px, 11vw, 52px);
+    letter-spacing: -0.055em;
+  }
+
+  .hero-description {
+    margin-top: 20px;
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+    margin-top: 26px;
+  }
+
+  .hero-actions .button {
+    width: 100%;
+  }
+
+  .hero-visual {
+    width: min(330px, 88vw);
+  }
+
+  .hero-core {
+    width: 110px;
+    height: 110px;
+  }
+
+  .hero-core strong {
+    font-size: 22px;
+  }
+
+  .hero-node {
+    min-width: 72px;
+    height: 38px;
+    padding: 0 12px;
+    font-size: 11px;
+  }
+
+  .hero-node-left {
+    left: 0;
+  }
+
+  .hero-node-right {
+    right: 0;
+  }
+
+  /* Sections */
+
+  .value-section,
+  .destinations-section,
+  .workflow-section,
+  .final-cta-section {
+    padding: 68px 0;
+  }
+
+  .section-heading {
+    margin-bottom: 32px;
+  }
+
+  .section-heading h2 {
+    font-size: 31px;
+  }
+
+  .section-heading p {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  /* Feature and workflow cards */
+
+  .feature-card,
+  .workflow-card {
+    padding: 24px;
+  }
+
+  .feature-card::after,
+  .workflow-card::after {
+    left: 24px;
+  }
+
+  /* Destinations */
+
+  .destination-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .destination-card {
+    height: 220px;
+  }
+
+  .destination-content {
+    min-height: 60px;
+    padding: 16px 18px;
+  }
+
+  .destination-content h3 {
+    font-size: 17px;
+  }
+
+  /* CTA */
+
+  .final-cta {
+    min-height: auto;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 30px 24px;
+    gap: 26px;
+  }
+
+  .final-cta .button {
+    width: 100%;
+  }
+
+  /* Footer */
+
+  .footer-nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px 22px;
+  }
+
+  .footer-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Workspace tabs */
+
+  .workspace-tabs {
+    gap: 4px;
+    margin-bottom: 22px;
+    padding: 4px;
+    border-radius: 10px;
+  }
+
+  .workspace-tab {
+    min-height: 40px;
+    padding: 0 14px;
+    font-size: 12px;
+  }
+
+  /* Form layout */
+
+  .form-grid {
+    grid-template-columns: 1fr;
+    column-gap: 0;
+    row-gap: 18px;
+  }
+
+  .form-group-full {
+    grid-column: auto;
+  }
+
+  .form-section-block + .form-section-block {
+    margin-top: 32px;
+    padding-top: 28px;
+  }
+
+  .form-section-heading {
+    gap: 11px;
+    margin-bottom: 20px;
+  }
+
+  .form-section-number {
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+  }
+
+  .form-input,
+  .form-select,
+  .form-textarea {
+    min-height: 44px;
+  }
+
+  /* Activity cards */
+
+  .activity-card {
+    padding: 17px;
+  }
+
+  .activity-card-header {
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .activity-card-actions {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .activity-edit-button,
+  .activity-delete-button {
+    min-height: 35px;
+  }
+
+  /* Budget */
+
+  .budget-summary-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .expense-card {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+    padding: 17px;
+  }
+
+  .expense-card-amount {
+    order: -1;
+    font-size: 17px;
+  }
+
+  .expense-card-actions {
+    justify-content: flex-start;
+    width: 100%;
+  }
+
+  .expense-edit-button,
+  .expense-delete-button {
+    min-height: 35px;
+  }
+
+  /* Trip cards */
+
+  .trips-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+    margin-bottom: 26px;
+  }
+
+  .trips-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .trip-card {
+    min-height: 220px;
+    padding: 22px;
+    border-radius: 16px;
+  }
+
+  .trip-card h3 {
+    font-size: 23px;
+  }
+
+  .trip-card-details {
+    margin-top: 20px;
+  }
+
+  .trip-card-actions {
+    margin-top: 22px;
+  }
+
+  /* Workspace list */
+
+  .workspace-list-heading {
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  /* Modal */
+
+  .modal-backdrop {
+    padding: 16px;
+  }
+
+  .modal {
+    max-height: calc(100vh - 32px);
+    padding: 22px;
+    border-radius: 16px;
+  }
+
+  .modal-header {
+    gap: 14px;
+  }
+
+  .modal-actions {
+    flex-direction: column-reverse;
+  }
+
+  .modal-actions .button,
+  .modal-actions button {
+    width: 100%;
+  }
+
+  /* Empty state */
+
+  .empty-state {
+    min-height: 210px;
+    padding: 24px 18px;
+  }
+
+  /* Notification */
+
+  .notification {
+    right: 16px;
+    bottom: 16px;
+    width: calc(100vw - 32px);
+  }
+
+  /* Trip and activity title + status */
+
+  .trip-title-row {
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .trip-title-row .status-badge {
+    margin-top: 4px;
+  }
+
+  .trip-card-title-row {
+    align-items: flex-start;
+  }
+
+  .activity-card-topline {
+    align-items: flex-start;
+  }
+
+  /* Auth pages */
+
+  .auth-tabs .tab-button {
+    min-height: 40px;
+  }
+
+  #loginForm .form-actions .button,
+  #signupForm .form-actions .button {
+    min-height: 46px;
+  }
+
+  /* Accessibility and touch */
+
+  .button,
+  .nav-button,
+  .workspace-tab,
+  .activity-edit-button,
+  .activity-delete-button,
+  .expense-edit-button,
+  .expense-delete-button,
+  .workspace-action-button,
+  .icon-button {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .button:active,
+  .nav-button:active,
+  .workspace-action-button:active,
+  .icon-button:active {
+    transform: translateY(1px);
+  }
+
+}
+
+
+/* =====================================================
+   SMALL MOBILE (max-width: 400px)
+   ===================================================== */
+
+@media (max-width: 400px) {
+
+  .container {
+    width: min(calc(100% - 24px), var(--container));
+  }
+
+  /* Header */
+
+  .main-nav {
+    gap: 9px;
+  }
+
+  .nav-link {
+    display: none;
+  }
+
+  .nav-button {
+    min-height: 36px;
+    padding: 0 11px;
+  }
+
+  /* Hero */
+
+  .hero-content h1 {
+    font-size: 37px;
+  }
+
+  .hero-visual {
+    width: min(290px, 88vw);
+  }
+
+  .hero-core {
+    width: 98px;
+    height: 98px;
+  }
+
+  .hero-core span {
+    font-size: 12px;
+  }
+
+  .hero-core strong {
+    font-size: 20px;
+  }
+
+  .hero-node {
+    min-width: 66px;
+    height: 35px;
+    font-size: 10px;
+  }
+
+  /* Destinations */
+
+  .destination-card {
+    height: 200px;
+  }
+
+  .destination-content {
+    padding: 14px 16px;
+  }
+
+  .destination-content h3 {
+    font-size: 16px;
+  }
+
+  .destination-number {
+    font-size: 11px;
+  }
+
+  /* Workspace tabs */
+
+  .workspace-tabs {
+    margin-right: -6px;
+    margin-left: -6px;
+    width: calc(100% + 12px);
+  }
+
+  .workspace-tab {
+    padding: 0 12px;
+    font-size: 11px;
+  }
+
+  /* Cards */
+
+  .activity-card,
+  .expense-card {
+    border-radius: 12px;
+  }
+
+  .activity-card-actions,
+  .expense-card-actions {
+    gap: 6px;
+  }
+
+  /* Trip and activity status */
+
+  .trip-title-row,
+  .trip-card-title-row {
+    gap: 7px;
+  }
+
+  .activity-card-topline {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 7px;
+  }
+
+  .activity-title-row {
+    align-items: flex-start;
+  }
+
+  .activity-title-row h3 {
+    font-size: 16px;
+  }
+
+  /* Forms */
+
+  .form-section-block + .form-section-block {
+    margin-top: 28px;
+    padding-top: 24px;
+  }
+
+  .form-section-heading {
+    gap: 9px;
+  }
+
+  .form-section-heading p {
+    line-height: 1.55;
+  }
+
+  /* Auth pages */
+
+  .auth-tabs .tab-button {
+    padding: 0 10px;
+    font-size: 12px;
+  }
+
+  /* Profile */
+
+  .profile-card {
+    padding: 18px;
+  }
+
+  .profile-identity h2 {
+    font-size: 18px;
+  }
+
+  .profile-avatar {
+    width: 52px;
+    height: 52px;
+    font-size: 20px;
+  }
+
+  .profile-detail {
+    padding: 14px 16px;
+  }
+
+}
